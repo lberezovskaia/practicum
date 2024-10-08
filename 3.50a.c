@@ -1,33 +1,49 @@
 #include <stdio.h>
-#include <string.h>
 
 int main(void)
 {
-    char str[100];
-    char even[100];
-    char odd[100];
-    int i = 0;
-    int k1 = 0;
-    int k2 = 0;
-    scanf(str);
-    gets(str);
-    printf("%s\n", str);
-    for (i; i < strlen(str); i++)
+char str;
+char a[100];
+int indig = 0;
+int i = 0;
+int count = 0;
+while ((str = getchar()) != '$')
+{
+    if ((str >= '0') && (str <= '9'))
     {
-        if ((i % 2 ) == 0)
+        if (indig == 0)
         {
-            even[k1] = str[i];
-            k1++;
-        }
-        if ((i % 2 ) != 0)
+            a[i] = str;
+            i++;
+        };
+        if (indig == 1)
         {
-            odd[k2] = str[i];
-            k2++;
-        }
+            if (count > 1)
+            {
+                continue;
+            }
+            else
+            {
+                a[i] = str;
+                i++;
+                count++;
+            };
+        };
+    };
+    if (str = '.')
+    {
+        a[i] = str;
+        i++;
+        indig = 1;
     }
-    even[k1] = '\0';
-    odd[k2] = '\0';
-    strcat(even, odd);
-    printf("%s\n", even);
-    return 0;
+    else 
+    {
+        a[i] = str;
+        i++;
+        count = 0; 
+    }
+}
+a[i] = '\0';
+printf("%s\n", a);
+return 0;
 }
