@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-int main(void)
-{
+int main(void){
     long n;
     scanf("%ld", &n);
     int a[100];
