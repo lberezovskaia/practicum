@@ -3,6 +3,7 @@
 
 int main(void){
     double eps; 
+    printf("enter your epsilon: ");
     scanf("%lf", &eps);
     double a = 0.0;
     double b = sqrt(0.5); 
@@ -15,6 +16,7 @@ int main(void){
         approx = approx * b;
     }
     pi = (2.0) / approx;
+    printf("the resulting approximation: ");
     printf("%Lf\n", pi);
     return 0;
 }
