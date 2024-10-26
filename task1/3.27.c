@@ -2,6 +2,7 @@
 
 int main(void){
     long n;
+    printf("enter your number: ");
     scanf("%ld", &n);
     int a[100];
     int i = 0;
@@ -13,6 +14,7 @@ int main(void){
         n = n / 10;
     }
     i--;
+    printf("processed number: ");
     for (int j = i; j >= 0; j--){
       printf("%d", *(a + j));
     }
