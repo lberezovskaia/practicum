@@ -6,6 +6,7 @@ int main(void){
     int i = 0;
     int flag = 0;
     int count = 0;
+    printf("enter your sequence: ");
     while ((ch = getchar()) != '$'){
         if (ch >= '0' && ch <= '9'){
             if (flag){
@@ -29,6 +30,6 @@ int main(void){
         *(s + i) = ch;
         i++;
     }
-    printf("%s\n", s);
+    printf("processed sequence: %s\n", s);
     return 0;
 }
