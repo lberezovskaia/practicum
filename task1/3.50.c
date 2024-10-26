@@ -30,6 +30,7 @@ int main(void){
         *(s + i) = ch;
         i++;
     }
+    *(s + i) = '\0';
     printf("processed sequence: %s\n", s);
     return 0;
 }
