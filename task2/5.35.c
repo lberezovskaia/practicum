@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
-#define n1 2
-#define n2 3
+#define n1 25
+#define n2 40
 
 void G(double *mas, int n, double *min, double *max){
     *min = *mas;
