@@ -119,10 +119,8 @@ void duplication(struct node *head, double elem){ // пункт д: дублир
     struct node *tmp = head;
     struct node *dop;
     
-    while (head->data != 0)
-    {
-        if (head->data == elem) 
-        {
+    while (head->data != 0){
+        if (head->data == elem){
             dop = (struct node *)malloc(sizeof(struct node));
             dop->data = elem;
             dop->next = head->next;
