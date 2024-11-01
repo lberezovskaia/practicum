@@ -21,7 +21,7 @@ void change_first_last(struct node *head){ // пункт a: меняем мес�
     last->data = first;
 }
 
-void remove_first_occurrence1(struct node **head, double elem){ // пункт б1: удаляем первое вхождение, введенного элемента 
+void remove_first_occurrence1(struct node **head, double elem){ // пункт б2: удаляем первое вхождение, введенного элемента 
     struct node* tmp = (*head);
     struct node *prev;
     struct node *dop;
@@ -48,7 +48,7 @@ void remove_first_occurrence1(struct node **head, double elem){ // пункт б
     }
 }
 
-void remove_first_occurrence2(struct node *a, double elem){ // пункт б2: удаляем первое вхождение, введенного элемента 
+void remove_first_occurrence2(struct node *a, double elem){ // пункт б1: удаляем первое вхождение, введенного элемента 
     struct node *tmp = a->next;
     struct node *prev;
     struct node *dop;
@@ -75,7 +75,7 @@ void remove_first_occurrence2(struct node *a, double elem){ // пункт б2: �
     }
 }
 
-void remove_all_occurrence1(struct node **head, double elem){ // пункт в1: удаляем все вхождения, введенного элемента 
+void remove_all_occurrence1(struct node **head, double elem){ // пункт в2: удаляем все вхождения, введенного элемента 
     struct node* tmp = (*head);
     struct node *prev;
     struct node *dop;
@@ -95,7 +95,7 @@ void remove_all_occurrence1(struct node **head, double elem){ // пункт в1:
     (*head) = tmp;
 }
 
-void remove_all_occurrence2(struct node *a, double elem){ // пункт в2: удаляем все вхождения, введенного элемента 
+void remove_all_occurrence2(struct node *a, double elem){ // пункт в1: удаляем все вхождения, введенного элемента 
     struct node *tmp = a->next;
     struct node *prev;
     struct node *dop;
