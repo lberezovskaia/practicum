@@ -134,6 +134,14 @@ void duplication(struct node *head, double elem){ // пункт д: дублир
     head = tmp;
 }
 
+void print(struct node *head){
+    printf("processed list: \n"); // вывод
+    while (head->data != 0){
+        printf("%lf\n", head->data);
+        head = head->next;
+    }
+}
+
 int main(void){
     struct node *head = (struct node *)malloc(sizeof(struct node));
     struct node *tmp = head;
@@ -154,64 +162,31 @@ int main(void){
     }
     head = tmp;
     
-    /* change_first_last(head); // вызов функции 
+    change_first_last(head); // вызов функции 
    
-    printf("list after change: \n"); // вывод
-    while (head->data != 0){
-        printf("%lf\n", head->data);
-        head = head->next;
-    }*/
+    print(head);
 
-    /* printf("enter the elem whose first occurrence you want to remove: ");
-       scanf("%lf", &elem);*/
+    printf("enter the elem whose first occurrence you want to remove: ");
+    scanf("%lf", &elem);
     
-    /* remove_first_occurrence1(&head, elem); // вызов функции 
+    remove_first_occurrence1(&head, elem); // вызов функции 
+    print(head);
     
-    printf("list after change: \n"); // вывод
-    while (head->data != 0){
-        printf("%lf\n", head->data);
-        head = head->next;
-    }*/
-    
-    /* struct node *a = (struct node *)malloc(sizeof(struct node)); // создание главного звена
+    struct node *a = (struct node *)malloc(sizeof(struct node)); // создание главного звена
     a->next = head;
-    
     remove_first_occurrence2(a, elem); // вызов функции
+    print(head);
     
-    printf("list after change: \n"); // вывод
-    while (a->next->data != 0){
-        printf("%lf\n", a->next->data);
-        a->next = a->next->next;
-    }*/
-    
-    /* remove_all_occurrence1(&head, elem); // вызов функции
-    
-    printf("list after change: \n"); // вывод
-    while (head->data != 0){
-        printf("%lf\n", head->data);
-        head = head->next;
-    }*/
-    
-    /* struct node *a = (struct node *)malloc(sizeof(struct node)); // создание главного звена
-    a->next = head;
-    
+    remove_all_occurrence1(&head, elem); // вызов функции
+    print(head);
+
     remove_all_occurrence2(a, elem);
-    
-    printf("list after change: \n"); // вывод
-    while (a->next->data != 0){
-        printf("%lf\n", a->next->data);
-        a->next = a->next->next;
-    }*/
+    print(head);
     
     printf("enter the elem you want to duplicate: ");
     scanf("%lf", &elem);
-    
     duplication(head, elem); // вызов функции
+    print(head);
     
-    printf("list after change: \n"); // вывод
-    while (head->data != 0){
-        printf("%lf\n", head->data);
-        head = head->next;
-    }
     return 0;
 }
