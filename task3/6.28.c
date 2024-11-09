@@ -6,7 +6,7 @@ struct node{
     struct node *next;
 };
 
-void change_first_last(struct node *head){ // пункт a: меняем местами первый и последний элемент
+void change_first_last(struct node *head){ // пункт a
     struct node *tmp = head;
     struct node *last;
     double first;
@@ -21,7 +21,7 @@ void change_first_last(struct node *head){ // пункт a: меняем мес�
     last->data = first;
 }
 
-void remove_first_occurrence1(struct node **head, double elem){ // пункт б2: удаляем первое вхождение, введенного элемента 
+void remove_first_occurrence1(struct node **head, double elem){ // пункт б2
     struct node* tmp = (*head);
     struct node *prev;
     struct node *dop;
@@ -48,7 +48,7 @@ void remove_first_occurrence1(struct node **head, double elem){ // пункт б
     }
 }
 
-void remove_first_occurrence2(struct node *a, double elem){ // пункт б1: удаляем первое вхождение, введенного элемента 
+void remove_first_occurrence2(struct node *a, double elem){ // пункт б1
     struct node *tmp = a->next;
     struct node *prev;
     struct node *dop;
@@ -75,7 +75,7 @@ void remove_first_occurrence2(struct node *a, double elem){ // пункт б1: �
     }
 }
 
-void remove_all_occurrence1(struct node **head, double elem){ // пункт в2: удаляем все вхождения, введенного элемента 
+void remove_all_occurrence1(struct node **head, double elem){ // пункт в2
     struct node* tmp = (*head);
     struct node *prev;
     struct node *dop;
@@ -95,7 +95,7 @@ void remove_all_occurrence1(struct node **head, double elem){ // пункт в2:
     (*head) = tmp;
 }
 
-void remove_all_occurrence2(struct node *a, double elem){ // пункт в1: удаляем все вхождения, введенного элемента 
+void remove_all_occurrence2(struct node *a, double elem){ // пункт в1
     struct node *tmp = a->next;
     struct node *prev;
     struct node *dop;
@@ -115,7 +115,7 @@ void remove_all_occurrence2(struct node *a, double elem){ // пункт в1: у�
     a->next = tmp;
 }
 
-void duplication(struct node *head, double elem){ // пункт д: дублируем, введенный элемент
+void duplication(struct node *head, double elem){ // пункт д
     struct node *tmp = head;
     struct node *dop;
     
@@ -133,7 +133,7 @@ void duplication(struct node *head, double elem){ // пункт д: дублир
 }
 
 void print(struct node *head){
-    printf("processed list: \n"); // вывод
+    printf("processed list: \n");
     while (head->data != 0){
         printf("%lf\n", head->data);
         head = head->next;
@@ -145,7 +145,7 @@ int main(void){
     struct node *tmp = head;
     double elem;
     
-    scanf("%lf", &(head->data)); // заполнение списка
+    scanf("%lf", &(head->data)); 
     while (head->data != 0){
         head->next = (struct node *)malloc(sizeof(struct node));
         head = head->next;
@@ -153,29 +153,29 @@ int main(void){
     }
     head->next = NULL;
     head = tmp;
-    printf("original list: \n"); // вывод изначального списка
+    printf("original list: \n");
     while (head->data != 0){
         printf("%lf\n", head->data);
         head = head->next;
     }
     head = tmp;
     
-    change_first_last(head); // вызов функции 
+    change_first_last(head);
    
     print(head);
 
     printf("enter the elem whose first occurrence you want to remove: ");
     scanf("%lf", &elem);
     
-    remove_first_occurrence1(&head, elem); // вызов функции 
+    remove_first_occurrence1(&head, elem);
     print(head);
     
     struct node *a = (struct node *)malloc(sizeof(struct node)); // создание главного звена
     a->next = head;
-    remove_first_occurrence2(a, elem); // вызов функции
+    remove_first_occurrence2(a, elem);
     print(head);
     
-    remove_all_occurrence1(&head, elem); // вызов функции
+    remove_all_occurrence1(&head, elem);
     print(head);
 
     remove_all_occurrence2(a, elem);
@@ -183,7 +183,7 @@ int main(void){
     
     printf("enter the elem you want to duplicate: ");
     scanf("%lf", &elem);
-    duplication(head, elem); // вызов функции
+    duplication(head, elem);
     print(head);
     
     return 0;
