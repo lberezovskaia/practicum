@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> // 6.43
 #include <stdlib.h>
 
 struct stack{
@@ -21,7 +21,7 @@ double extract(struct stack **head){
     return elem;
 }
 
-void print_queue(struct stack *head){
+void print_stack(struct stack *head){
     struct stack *tmp = head;
     printf("stack:");
     while (tmp != NULL) {
@@ -38,33 +38,33 @@ int main(void){
     printf("enter double number: ");
     scanf("%lf", &n);
     insert(&head, n);
-    print_queue(head);
+    print_stack(head);
     
     printf("enter double number: ");
     scanf("%lf", &n);
     insert(&head, n);
-    print_queue(head);
+    print_stack(head);
 
     printf("enter double number: ");
     scanf("%lf", &n);
     insert(&head, n);
-    print_queue(head);
+    print_stack(head);
 
     double elem;
     elem = extract(&head);
     printf("extract elem: %lf\n", elem);
-    print_queue(head);
+    print_stack(head);
 
     elem = extract(&head);
     printf("extract elem: %lf\n", elem);
-    print_queue(head);
+    print_stack(head);
 
     elem = extract(&head);
     printf("extract elem: %lf\n", elem);
-    print_queue(head);
+    print_stack(head);
 
     insert(&head, 5);
-    print_queue(head);
+    print_stack(head);
 
     return 0;
 }
