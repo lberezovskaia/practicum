@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> 
 #include <stdlib.h>
 
 struct queue{
@@ -36,12 +36,25 @@ double extract(struct queue **head){
 void print_queue(struct queue *head){
     struct queue *tmp = head;
     printf("queue:");
+    if (tmp == NULL){
+        printf(" queue is empty!");
+    }
     while (tmp != NULL) {
-        printf("   %lf", tmp->data);
+        printf(" %lf", tmp->data);
         tmp = tmp->next; 
     }
     printf("\n");
     printf("\n");
+}
+
+void delete_queue(struct queue **head)
+{
+    if (head == NULL) return;
+    struct queue *tmp;
+    for (tmp = *head; tmp != NULL; tmp = *head){
+        *head = tmp->next;
+        free(tmp);
+    }
 }
 
 int main(void){
@@ -77,6 +90,7 @@ int main(void){
 
     insert(&head, 5);
     print_queue(head);
-
+    delete_queue(&head);
+    print_queue(head);
     return 0;
 }
